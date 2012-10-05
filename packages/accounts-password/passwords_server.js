@@ -2,10 +2,7 @@
 
   // internal verifier collection. Never published.
   Accounts._srpChallenges = new Meteor.Collection(
-    "accounts._srpChallenges",
-    null /*manager*/,
-    null /*driver*/,
-    true /*preventAutopublish*/);
+    "accounts._srpChallenges", {_preventAutopublish: true});
   // Don't let people write to the collection, even in insecure
   // mode. There's no good reason for people to be fishing around in this
   // table, and it is _really_ insecure to allow it as users could easily
@@ -15,10 +12,7 @@
 
   // internal email validation tokens collection. Never published.
   Accounts._emailValidationTokens = new Meteor.Collection(
-    "accounts._emailValidationTokens",
-    null /*manager*/,
-    null /*driver*/,
-    true /*preventAutopublish*/);
+    "accounts._emailValidationTokens", {_preventAutopublish: true});
   // also lock down email validation. These can be used to log in.
   Accounts._emailValidationTokens.allow({});
 
